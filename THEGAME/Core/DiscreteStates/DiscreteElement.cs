@@ -175,7 +175,7 @@ namespace THEGAME.Core.DiscreteStates
             {
                 throw new ArgumentOutOfRangeException("size. The size of an DiscreteElement cannot be null, negative or too small!");
             }
-            if (size < NB_BITS_UINT && number > Math.Pow(2, size) - 1)
+            if (size < NB_BITS_UINT && number > (1U << size) - 1)
             {
                 throw new ArgumentOutOfRangeException("number. The specified DiscreteElement does not exist within the specified size!");
             }
@@ -215,7 +215,7 @@ namespace THEGAME.Core.DiscreteStates
             }
             if (numbers.Length > size / NB_BITS_UINT + 1 ||
                 (numbers.Length == size / NB_BITS_UINT + 1 &&
-                    numbers[numbers.Length - 1] > Math.Pow(2, size % NB_BITS_UINT) - 1))
+                    numbers[numbers.Length - 1] >  (1U << (size % NB_BITS_UINT)) - 1))
             {
                 throw new ArgumentOutOfRangeException("numbers. The specified DiscreteElement does not exist within the specified size!");
             }
@@ -282,8 +282,8 @@ namespace THEGAME.Core.DiscreteStates
             _numbers = new uint[_size / NB_BITS_UINT + 1];
             foreach (string w in worlds)
             {
-                uint index = (uint)refList.IndexOf(w);
-                _numbers[index / NB_BITS_UINT] += (uint)Math.Pow(2, index % NB_BITS_UINT);
+                int index = refList.IndexOf(w);
+                _numbers[index / NB_BITS_UINT] += 1U << (index % NB_BITS_UINT);
             }
 
         }
@@ -321,8 +321,8 @@ namespace THEGAME.Core.DiscreteStates
             uint[] numbers = new uint[size / NB_BITS_UINT + 1];
             foreach (T w in worlds)
             {
-                uint index = (uint)refList.IndexOf(w);
-                numbers[index / NB_BITS_UINT] += (uint)Math.Pow(2, index % NB_BITS_UINT);
+                int index = refList.IndexOf(w);
+                numbers[index / NB_BITS_UINT] += 1U << (index % NB_BITS_UINT);
             }
             DiscreteElement newlyBuilt = new DiscreteElement(size, numbers);
             newlyBuilt._card = card;
@@ -353,7 +353,7 @@ namespace THEGAME.Core.DiscreteStates
             {
                 if (i == Numbers.Length - 1)
                 {
-                    oppositeNumbers[i] = (uint)Math.Pow(2, Size % NB_BITS_UINT) - _numbers[i] - 1;
+                    oppositeNumbers[i] = (1U << (Size % NB_BITS_UINT)) - _numbers[i] - 1;
                 }
                 else
                 {
@@ -583,7 +583,7 @@ namespace THEGAME.Core.DiscreteStates
             {
                 return _card == _size;
             }
-            if (Numbers[Numbers.Length - 1] != (uint)Math.Pow(2, Size % NB_BITS_UINT) - 1)
+            if (Numbers[Numbers.Length - 1] != (1U << (Size % NB_BITS_UINT)) - 1)
             {
                 return false;
             }

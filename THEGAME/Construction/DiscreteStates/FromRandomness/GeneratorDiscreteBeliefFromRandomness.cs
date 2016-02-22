@@ -89,7 +89,7 @@ namespace THEGAME.Construction.DiscreteStates.FromRandomness
                 throw new ArgumentOutOfRangeException("obj. The number of objects determine the number of generated MassFunctions!");
             }
             List<DiscreteMassFunction> evidence = new List<DiscreteMassFunction>();
-            int power = (int)Math.Pow(2, NbPossibleWorlds);
+            int power = 1 << NbPossibleWorlds;
             for (int i = 0; i < obj.Length; i++)
             {
                 //Add the function:

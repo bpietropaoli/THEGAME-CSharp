@@ -171,7 +171,7 @@ namespace THEGAME.Construction.DiscreteStates.FromBeliefs
         /// false otherwise.</returns>
         public bool IsValid()
         {
-            if (_vectors.Count == Math.Pow(2, FromSize)-1)
+            if (_vectors.Count == (1U << FromSize) - 1)
             {
                 return false;
             }

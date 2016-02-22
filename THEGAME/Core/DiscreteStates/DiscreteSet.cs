@@ -324,7 +324,7 @@ namespace THEGAME.Core.DiscreteStates
             //Generate Elements:
             for (int i = 0; i < numberOfAtoms; i++)
             {
-                number = (uint)Math.Pow(2, i % DiscreteElement.NB_BITS_UINT);
+                number = 1U << (i % DiscreteElement.NB_BITS_UINT);
                 numbers[i / DiscreteElement.NB_BITS_UINT] = number;
                 s.Add(new DiscreteElement(numberOfAtoms, numbers));
                 numbers[i / DiscreteElement.NB_BITS_UINT] = 0;
@@ -356,7 +356,7 @@ namespace THEGAME.Core.DiscreteStates
             //Init:
             DiscreteSet s = new DiscreteSet();
             uint[] numbers = new uint[numberOfAtoms / DiscreteElement.NB_BITS_UINT + 1];
-            uint limit = (uint)Math.Pow(2, numberOfAtoms % DiscreteElement.NB_BITS_UINT) - 1;
+            uint limit = (1U << (numberOfAtoms % DiscreteElement.NB_BITS_UINT)) - 1;
             for (int i = 0; i < numbers.Length; i++)
             {
                 numbers[0] = 0;
