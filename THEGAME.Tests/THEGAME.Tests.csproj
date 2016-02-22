@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C1257821-B819-4BC5-A96F-7DDF6FADE42C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>THEGAME.Tests</RootNamespace>
+    <AssemblyName>THEGAME.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>THEGAME.Tests.TestProgram</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DiscreteStates\DiscreteElementEnumeratorTests.cs" />
+    <Compile Include="DiscreteStates\DiscreteMassFunctionTests.cs" />
+    <Compile Include="DiscreteStates\DiscreteSetTests.cs" />
+    <Compile Include="DiscreteStates\DiscreteElementTests.cs" />
+    <Compile Include="DiscreteStates\GeneratorDiscreteBeliefFromBeliefsTests.cs" />
+    <Compile Include="DiscreteStates\GeneratorDiscreteBeliefFromRandomnessTests.cs" />
+    <Compile Include="DiscreteStates\GeneratorDiscreteBeliefFromSensorsTests.cs" />
+    <Compile Include="IntervalStates\IntervalElementTests.cs" />
+    <Compile Include="IntervalStates\IntervalMassFunctionTests.cs" />
+    <Compile Include="IntervalStates\IntervalTests.cs" />
+    <Compile Include="TestProgram.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DiscreteStates\StringReferenceListTests.cs" />
+    <Compile Include="Generic\SetTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Resources\BeliefsFromBeliefs\SavingTest\Posture\LyingDown" />
+    <None Include="Resources\BeliefsFromBeliefs\SavingTest\Posture\LyingDown Standing" />
+    <None Include="Resources\BeliefsFromBeliefs\SavingTest\Posture\Seated" />
+    <None Include="Resources\BeliefsFromBeliefs\SavingTest\Posture\Seated LyingDown" />
+    <None Include="Resources\BeliefsFromBeliefs\SavingTest\Posture\Seated LyingDown Standing" />
+    <None Include="Resources\BeliefsFromBeliefs\SavingTest\Posture\Seated Standing" />
+    <None Include="Resources\BeliefsFromBeliefs\SavingTest\Posture\Standing" />
+    <None Include="Resources\BeliefsFromBeliefs\SavingTest\Posture\values" />
+    <None Include="Resources\BeliefsFromBeliefs\SavingTest\values" />
+    <None Include="Resources\BeliefsFromBeliefs\Sleeping\Posture\values" />
+    <None Include="Resources\BeliefsFromBeliefs\Sleeping\values" />
+    <None Include="Resources\BeliefsFromSensors\optionTest\tempoFusion\options" />
+    <None Include="Resources\BeliefsFromSensors\optionTest\tempoVariation\options" />
+    <None Include="Resources\BeliefsFromSensors\optionTest\tempo\options" />
+    <None Include="Resources\BeliefsFromSensors\optionTest\values" />
+    <None Include="Resources\BeliefsFromSensors\optionTest\variation\options" />
+    <None Include="Resources\BeliefsFromSensors\test\values" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\THEGAME\THEGAME.csproj">
+      <Project>{4c1cee79-13c6-4dd0-a610-bc0f873cb8bd}</Project>
+      <Name>THEGAME</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\BeliefsFromBeliefs\Sleeping\Posture\LyingDown.txt" />
+    <Content Include="Resources\BeliefsFromBeliefs\Sleeping\Posture\Seated.txt" />
+    <Content Include="Resources\BeliefsFromBeliefs\Sleeping\Posture\SeatedULyingDown.txt" />
+    <Content Include="Resources\BeliefsFromBeliefs\Sleeping\Posture\SeatedUStanding.txt" />
+    <Content Include="Resources\BeliefsFromBeliefs\Sleeping\Posture\SeatedUStandingULyingDown.txt" />
+    <Content Include="Resources\BeliefsFromBeliefs\Sleeping\Posture\Standing.txt" />
+    <Content Include="Resources\BeliefsFromBeliefs\Sleeping\Posture\StandingULyingDown.txt" />
+    <Content Include="Resources\BeliefsFromBeliefs\XML\BFB.xml" />
+    <Content Include="Resources\BeliefsFromSensors\optionTest\tempoFusion\Aka.txt" />
+    <Content Include="Resources\BeliefsFromSensors\optionTest\tempoFusion\AkaOrBeaOrElf.txt" />
+    <Content Include="Resources\BeliefsFromSensors\optionTest\tempoFusion\Bea.txt" />
+    <Content Include="Resources\BeliefsFromSensors\optionTest\tempoFusion\Elf.txt" />
+    <Content Include="Resources\BeliefsFromSensors\optionTest\tempoVariation\Aka.txt" />
+    <Content Include="Resources\BeliefsFromSensors\optionTest\tempoVariation\AkaOrBeaOrElf.txt" />
+    <Content Include="Resources\BeliefsFromSensors\optionTest\tempoVariation\Bea.txt" />
+    <Content Include="Resources\BeliefsFromSensors\optionTest\tempoVariation\Elf.txt" />
+    <Content Include="Resources\BeliefsFromSensors\optionTest\tempo\Aka.txt" />
+    <Content Include="Resources\BeliefsFromSensors\optionTest\tempo\AkaOrBeaOrElf.txt" />
+    <Content Include="Resources\BeliefsFromSensors\optionTest\tempo\Bea.txt" />
+    <Content Include="Resources\BeliefsFromSensors\optionTest\tempo\Elf.txt" />
+    <Content Include="Resources\BeliefsFromSensors\optionTest\variation\Aka.txt" />
+    <Content Include="Resources\BeliefsFromSensors\optionTest\variation\AkaOrBea.txt" />
+    <Content Include="Resources\BeliefsFromSensors\optionTest\variation\Bea.txt" />
+    <Content Include="Resources\BeliefsFromSensors\optionTest\variation\Elf.txt" />
+    <Content Include="Resources\BeliefsFromSensors\test\S1\Aka.txt" />
+    <Content Include="Resources\BeliefsFromSensors\test\S1\AkaOrBea.txt" />
+    <Content Include="Resources\BeliefsFromSensors\test\S1\Bea.txt" />
+    <Content Include="Resources\BeliefsFromSensors\test\S1\Elf.txt" />
+    <Content Include="Resources\BeliefsFromSensors\test\S2\Aka.txt" />
+    <Content Include="Resources\BeliefsFromSensors\test\S2\AkaOrBeaOrElf.txt" />
+    <Content Include="Resources\BeliefsFromSensors\test\S2\AkaOrElf.txt" />
+    <Content Include="Resources\BeliefsFromSensors\test\S2\Bea.txt" />
+    <Content Include="Resources\BeliefsFromSensors\test\S2\Elf.txt" />
+    <Content Include="Resources\BeliefsFromSensors\test\S3\Aka.txt" />
+    <Content Include="Resources\BeliefsFromSensors\test\S3\AkaOrBea.txt" />
+    <Content Include="Resources\BeliefsFromSensors\test\S3\AkaOrBeaOrElf.txt" />
+    <Content Include="Resources\BeliefsFromSensors\test\S3\Bea.txt" />
+    <Content Include="Resources\BeliefsFromSensors\test\S3\Elf.txt" />
+    <Content Include="Resources\BeliefsFromSensors\test\S4\Aka.txt" />
+    <Content Include="Resources\BeliefsFromSensors\test\S4\AkaOrBea.txt" />
+    <Content Include="Resources\BeliefsFromSensors\test\S4\Bea.txt" />
+    <Content Include="Resources\BeliefsFromSensors\test\S4\Elf.txt" />
+    <Content Include="Resources\BeliefsFromSensors\test\S5\Aka.txt" />
+    <Content Include="Resources\BeliefsFromSensors\test\S5\AkaOrBea.txt" />
+    <Content Include="Resources\BeliefsFromSensors\test\S5\AkaOrBeaOrElf.txt" />
+    <Content Include="Resources\BeliefsFromSensors\test\S5\Bea.txt" />
+    <Content Include="Resources\BeliefsFromSensors\test\S5\Elf.txt" />
+    <Content Include="Resources\BeliefsFromSensors\XML\BFS.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>mkdir "Resources"
+xcopy /Y /E "$(ProjectDir)Resources" "Resources\"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

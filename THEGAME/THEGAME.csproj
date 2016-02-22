@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4C1CEE79-13C6-4DD0-A610-BC0F873CB8BD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>THEGAME</RootNamespace>
+    <AssemblyName>THEGAME</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\THEGAME.xml</DocumentationFile>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <DocumentationFile>bin\Release\THEGAME.xml</DocumentationFile>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Construction\DiscreteStates\FromBeliefs\GeneratorDiscreteBeliefFromBeliefs.cs" />
+    <Compile Include="Construction\DiscreteStates\FromRandomness\GeneratorDiscreteBeliefFromRandomness.cs" />
+    <Compile Include="Construction\DiscreteStates\FromBeliefs\DiscreteEvidentialMapping.cs" />
+    <Compile Include="Construction\DiscreteStates\FromBeliefs\DiscreteMappingPoint.cs" />
+    <Compile Include="Construction\DiscreteStates\FromBeliefs\DiscreteMappingVector.cs" />
+    <Compile Include="Construction\DiscreteStates\FromSensors\GeneratorDiscreteBeliefFromSensors.cs" />
+    <Compile Include="Construction\DiscreteStates\FromSensors\DiscreteSensorData.cs" />
+    <Compile Include="Construction\DiscreteStates\FromSensors\DiscreteSensorFocalBelief.cs" />
+    <Compile Include="Construction\DiscreteStates\FromSensors\DiscreteSensorFocalPoint.cs" />
+    <Compile Include="Construction\DiscreteStates\FromSensors\DiscreteSensorModel.cs" />
+    <Compile Include="Construction\DiscreteStates\FromSensors\DiscreteSensorOption.cs" />
+    <Compile Include="Construction\DiscreteStates\FromSensors\DiscreteSensorOptionData.cs" />
+    <Compile Include="Construction\Generic\IBeliefConstructor.cs" />
+    <Compile Include="Construction\Generic\IBeliefModel.cs" />
+    <Compile Include="Construction\Generic\ModelFormat.cs" />
+    <Compile Include="Construction\Generic\NamedMassFunction.cs" />
+    <Compile Include="Construction\Generic\SensorMeasure.cs" />
+    <Compile Include="Core\DiscreteStates\DiscreteElementEnumerator.cs" />
+    <Compile Include="Core\DiscreteStates\ReferenceList.cs" />
+    <Compile Include="Core\Generic\AElement.cs" />
+    <Compile Include="Core\Generic\FocalElement.cs" />
+    <Compile Include="Core\Generic\AMassFunction.cs" />
+    <Compile Include="Core\Generic\Set.cs" />
+    <Compile Include="Core\DiscreteStates\DiscreteMassFunction.cs" />
+    <Compile Include="Core\DiscreteStates\DiscreteSet.cs" />
+    <Compile Include="Core\DiscreteStates\DiscreteElement.cs" />
+    <Compile Include="Core\DiscreteStates\StringReferenceList.cs" />
+    <Compile Include="Core\IntervalStates\Interval.cs" />
+    <Compile Include="Core\IntervalStates\IntervalElement.cs" />
+    <Compile Include="Core\IntervalStates\IntervalMassFunction.cs" />
+    <Compile Include="Exceptions\Construction\InvalidBeliefConstructorException.cs" />
+    <Compile Include="Exceptions\Construction\InvalidBeliefModelException.cs" />
+    <Compile Include="Exceptions\Construction\InvalidOptionFlagException.cs" />
+    <Compile Include="Exceptions\Construction\ModelDoesNotExistException.cs" />
+    <Compile Include="Exceptions\Construction\SensorAlreadyRegisteredException.cs" />
+    <Compile Include="Exceptions\DiscreteStates\DiscreteElementTooBigForAnIntegerException.cs" />
+    <Compile Include="Exceptions\DiscreteStates\IncompatibleDiscreteElementSizeException.cs" />
+    <Compile Include="Exceptions\DiscreteStates\IncompatibleReferenceListException.cs" />
+    <Compile Include="Exceptions\Generic\CombinationNotDefinedException.cs" />
+    <Compile Include="Exceptions\Generic\EmptyElementException.cs" />
+    <Compile Include="Exceptions\Generic\EmptyMassFunctionException.cs" />
+    <Compile Include="Exceptions\Generic\IncompatibleElementException.cs" />
+    <Compile Include="Exceptions\Generic\IncompatibleMassFunctionException.cs" />
+    <Compile Include="Exceptions\Generic\IncompatiblePowerSetException.cs" />
+    <Compile Include="Exceptions\Generic\IncompatibleSetException.cs" />
+    <Compile Include="Exceptions\Generic\NotEnoughMassFunctionsException.cs" />
+    <Compile Include="Exceptions\IntervalStates\InvalidIntervalException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Construction\IntervalStates\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
